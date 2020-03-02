@@ -22,7 +22,7 @@ class KafkaHamrProducer {
         // todo optimize space (repeating timestamps, useless keys, etc.
         producer.send(new ProducerRecord<String, String>(topic, 0, time, "src", Integer.toString(src)));
         producer.send(new ProducerRecord<String, String>(topic, 1, time, "dst", Integer.toString(dst)));
-        producer.send(new ProducerRecord<String, String>(topic, 3, time, "data", dataContent));
+        producer.send(new ProducerRecord<String, String>(topic, 2, time, "data", dataContent));
     }
 
     private static KafkaProducer<String, String> createProducer() {
